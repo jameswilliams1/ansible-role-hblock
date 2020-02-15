@@ -1,4 +1,7 @@
 ---
 hblock_download_url: "https://raw.githubusercontent.com/hectorm/hblock/\
 v{{ hblock_version }}/hblock"
-hblock_temp_hosts: /tmp/hosts  # temp file for hBlock to write to
+hblock_temp_hosts: /tmp/hosts  # temp hosts file for hBlock to write to
+hosts_file_message: |-  # set issue messasge for header and footer
+  # Created with ansible-role-hblock. Please report any issues to:
+  # https://github.com/jameswilliams1/ansible-role-hblock/issues

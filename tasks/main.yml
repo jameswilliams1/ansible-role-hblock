@@ -18,9 +18,8 @@
   args:
     creates: "{{ hblock_temp_hosts }}"
   environment:
-    HBLOCK_HEADER: |
-      # Created with ansible-role-hblock. Please report any issues to:
-      # https://github.com/jameswilliams1/ansible-role-hblock/issues
+    HBLOCK_HEADER: "{{ hosts_file_message }}"
+    HBLOCK_FOOTER: "{{ hosts_file_message }}"
 
 - name: Read temporary hosts file to the controller
   slurp:
