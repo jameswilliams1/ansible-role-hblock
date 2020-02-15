@@ -2,7 +2,7 @@
 - name: Download hBlock executable
   become: true
   get_url:
-    src: "{{ hblock_download_url }}"
+    url: "{{ hblock_download_url }}"
     checksum: "{{ hblock_download_checksum }}"
     dest: "{{ hblock_install_dir }}"
     mode: '0755'
