@@ -1,3 +1,4 @@
 ---
 hblock_download_url: "https://raw.githubusercontent.com/hectorm/hblock/\
 v{{ hblock_version }}/hblock"
+hblock_temp_hosts: /tmp/hosts  # temp file for hBlock to write to

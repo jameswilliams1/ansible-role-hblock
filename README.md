@@ -8,7 +8,7 @@ This role installs hBlock on Linux. It will overwrite a specified host file (/et
 Requirements
 ------------
 
-None.
+- Either curl or wget must be available on the host
 
 Role Variables
 --------------
@@ -37,5 +37,5 @@ MIT
 Author Information
 ------------------
 
-James Williams  
+James Williams
 [https://github.com/jameswilliams1/](https://github.com/jameswilliams1/ "GitHub Page")

@@ -7,8 +7,13 @@
     dest: "{{ hblock_install_dir }}"
     mode: "{{ hblock_root_only | ternary('0744', '0755') }}"
     owner: root
+    group: root
 
-# - name: Run hBlock
-#   become: true
-#   argv:
-#     -
+- name: Create temporary hosts file using hBlock
+  become: true
+  command:
+    argv:
+      - "{{ hblock_install_dir }}/hblock"
+      - "-O{{ hblock_temp_hosts }}"  # output file
+  args:
+    creates: "{{ hblock_temp_hosts }}"
