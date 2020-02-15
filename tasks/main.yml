@@ -1,5 +1,5 @@
 ---
-- name: Download hBlock executable
+- name: Download and install hBlock executable
   become: true
   get_url:
     url: "{{ hblock_download_url }}"
@@ -17,3 +17,22 @@
       - "-O{{ hblock_temp_hosts }}"  # output file
   args:
     creates: "{{ hblock_temp_hosts }}"
+  environment:
+    HBLOCK_HEADER: |
+      # Created with ansible-role-hblock. Please report any issues to:
+      # https://github.com/jameswilliams1/ansible-role-hblock/issues
+
+- name: Read temporary hosts file to the controller
+  slurp:
+    src: "{{ hblock_temp_hosts }}"
+  register: hostsfile
+
+- name: Append temporary hosts file to existing hosts file
+  become: true
+  blockinfile:
+    path: /etc/hosts
+    backup: true
+    owner: root
+    group: root
+    mode: '0644'
+    block: "{{ hostsfile.content | b64decode }}"

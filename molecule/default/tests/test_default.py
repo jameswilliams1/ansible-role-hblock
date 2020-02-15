@@ -13,4 +13,10 @@ def test_hblock_script_installed(host):
     assert hblock.is_file
     assert hblock.user == "root"
     assert hblock.group == "root"
-    assert hblock.mode == "0o644"  # role default
+    assert oct(hblock.mode) == "0o744"  # role default
+
+
+def test_role_does_not_destroy_existing_hosts_file(host):
+    message = "# File not overwritten"  # added as a test before running role
+    hosts_file = host.file("/etc/hosts")
+    assert hosts_file.content_string.split("\n")[0] == message  # first line
