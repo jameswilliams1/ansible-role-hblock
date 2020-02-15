@@ -5,5 +5,10 @@
     url: "{{ hblock_download_url }}"
     checksum: "{{ hblock_download_checksum }}"
     dest: "{{ hblock_install_dir }}"
-    mode: '0755'
+    mode: "{{ hblock_root_only | ternary('0744', '0755') }}"
     owner: root
+
+# - name: Run hBlock
+#   become: true
+#   argv:
+#     -
