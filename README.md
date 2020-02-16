@@ -20,6 +20,7 @@ hblock_version:  Version of hBlock script to download
 hblock_download_checksum:  Hash of hBlock script prefixed with hash type (see example)
 hblock_install_dir:  Directory to install hBlock to
 hblock_root_only:  Whether to restrict usage of hBlock to root
+hblock_output_file: File to write the blocklist to (default /etc/hosts)
 ```
 
 Dependencies

@@ -13,14 +13,12 @@ jobs:
           - '3.7'
           - '3.8'
         MOLECULE_DISTRO:
-          - ubuntu:16.04
-          - ubuntu:18.04
-          - ubuntu:19
-          - debian:8
-          - debian:9
-          - debian:10
-          - centos:7
-          - centos:8
+          - ubuntu1604
+          - ubuntu1804
+          - debian9
+          - debian10
+          - centos7
+          - centos8
 
     steps:
       - name: Checkout repo

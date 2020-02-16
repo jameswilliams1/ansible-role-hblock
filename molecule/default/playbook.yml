@@ -1,14 +1,7 @@
 ---
 - name: Converge
   hosts: all
-  pre_tasks:
-    - name: Add a test line to the hosts file to ensure it isn't overwritten
-      become: true
-      lineinfile:
-        path: /etc/hosts
-        line: '# File not overwritten'
-        state: present
-        insertbefore: BOF
-
+  vars:
+    hblock_output_file: /etc/hosts_TEST  # can't edit /etc/hosts in docker
   roles:
     - ansible-role-hblock
