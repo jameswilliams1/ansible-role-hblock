@@ -8,7 +8,7 @@ This role installs and then runs hBlock on Linux. It will backup then append to 
 Requirements
 ------------
 
-- Either curl or wget must be available on the host machine in order to run hBlock
+- Either curl or wget must be available on the host machine
 - A POSIX compatible shell is required on the host
 
 Role Variables
@@ -41,6 +41,7 @@ Example Playbook
     95b5f8224bad3f4b44b8'
     hblock_install_dir: /usr/local/bin  # Generally no reason to change this
     hblock_root_only: false  # WARNING If false, allows non root users to modify hosts file using hBlock
+    hblock_output_file: /some/other/path
 ```
 
 License
