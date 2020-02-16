@@ -1,12 +1,12 @@
 ---
 name: Molecule test
-on: [push, pull_request]  # yamllint disable-line rule:truthy
+on: push  # yamllint disable-line rule:truthy
 
 jobs:
   build:
     runs-on: ubuntu-18.04
     strategy:
-      max-parallel: 4
+      max-parallel: 18
       matrix:
         PYTHON_VERSION:
           - '3.6'
