@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0d742337683ab988ff17dcc2d993df8492ff61c4f31924afd61c21b79e8a3d24"
+            "sha256": "0845dcde61c3d1679e8f2d41f0f0d15def2deb32c91547c1e05722e44635270a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -213,6 +213,13 @@
             ],
             "version": "==0.3.0"
         },
+        "docker": {
+            "hashes": [
+                "sha256:1c2ddb7a047b2599d1faec00889561316c674f7099427b9c51e8cb804114b553",
+                "sha256:ddae66620ab5f4bce769f64bcd7934f880c8abe6aa50986298db56735d0f722e"
+            ],
+            "version": "==4.2.0"
+        },
         "entrypoints": {
             "hashes": [
                 "sha256:589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19",
@@ -338,7 +345,7 @@
         },
         "molecule": {
             "extras": [
-                "vagrant"
+                "docker"
             ],
             "hashes": [
                 "sha256:12fa4231ed69c6e7f50432588eaace36cea917a8c73c1751269ce55df32ced24",
@@ -530,12 +537,6 @@
             ],
             "version": "==1.2.1"
         },
-        "python-vagrant": {
-            "hashes": [
-                "sha256:af9a8a9802d382d45dbea96aa3cfbe77c6e6ad65b3fe7b7c799d41ab988179c6"
-            ],
-            "version": "==0.5.15"
-        },
         "pyyaml": {
             "hashes": [
                 "sha256:059b2ee3194d718896c0ad077dd8c043e5e909d9180f387ce42012662a4946d6",
@@ -660,6 +661,13 @@
                 "sha256:f28b3e8a6483e5d49e7f8949ac1a78314e740333ae305b4ba5defd3e74fb37a8"
             ],
             "version": "==0.1.8"
+        },
+        "websocket-client": {
+            "hashes": [
+                "sha256:0fc45c961324d79c781bab301359d5a1b00b13ad1b10415a4780229ef71a5549",
+                "sha256:d735b91d6d1692a6a181f2a8c9e0238e5f6373356f561bb9dc4c7af36f452010"
+            ],
+            "version": "==0.57.0"
         },
         "whichcraft": {
             "hashes": [
