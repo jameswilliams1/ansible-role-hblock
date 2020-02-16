@@ -1,0 +1,42 @@
+---
+- name: Download and install hBlock executable
+  become: true
+  get_url:
+    url: "{{ hblock_download_url }}"
+    checksum: "{{ hblock_download_checksum }}"
+    dest: "{{ hblock_install_dir }}"
+    mode: "{{ hblock_root_only | ternary('0744', '0755') }}"
+    owner: root
+    group: root
+
+- name: Set location of temporary hosts file
+  set_fact:
+    # No need to support Windows here as hBlock is POSIX only
+    hblock_temp_hosts: "{{ '/tmp/' + (hblock_output_file | basename) }}"
+
+- name: Create temporary hosts file using hBlock
+  become: true
+  command:
+    argv:
+      - "{{ hblock_install_dir }}/hblock"
+      - "-O{{ hblock_temp_hosts }}"  # output file
+  args:
+    creates: "{{ hblock_temp_hosts }}"
+  environment:
+    HBLOCK_HEADER: "{{ hblock_hosts_file_message }}"
+    HBLOCK_FOOTER: "{{ hblock_hosts_file_message }}"
+
+- name: Read temporary hosts file to the controller
+  slurp:
+    src: "{{ hblock_temp_hosts }}"
+  register: hostsfile
+
+- name: Append temporary hosts file to specified output file
+  become: true
+  blockinfile:
+    path: "{{ hblock_output_file }}"
+    backup: true
+    owner: root
+    group: root
+    mode: '0644'
+    block: "{{ hostsfile.content | b64decode }}"

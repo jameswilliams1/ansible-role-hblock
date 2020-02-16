@@ -1,0 +1,7 @@
+---
+hblock_version: '2.1.4'
+hblock_download_checksum: 'sha256:a379434ebd58b0b976244d568a299318aa24e7be8d67\
+95b5f8224bad3f4b44b8'
+hblock_install_dir: /usr/local/bin
+hblock_root_only: true  # Set to false to allow anyone to run the hBlock script
+hblock_output_file: /etc/hosts

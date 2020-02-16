@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    hblock_output_file: /etc/hosts_TEST  # can't edit /etc/hosts in docker
+  roles:
+    - ansible-role-hblock

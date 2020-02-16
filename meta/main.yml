@@ -1,0 +1,36 @@
+---
+galaxy_info:
+  author: James Williams
+  role_name: hblock
+  description: Install and configure hBlock on Linux.
+  issue_tracker_url: >-
+    https://github.com/jameswilliams1/ansible-role-hblock/issues
+  license: license (MIT)
+  min_ansible_version: 1.2
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+
+  galaxy_tags:
+    - hblock
+    - adblock
+    - trackers
+    - malware
+    - ads
+    - linux
+    - scraping
+    - system
+    - server
+
+dependencies: []

@@ -1,0 +1,20 @@
+---
+- name: Prepare the test environment
+  hosts: all
+  tasks:
+    - name: Add a test line to the hosts file to ensure it isn't overwritten
+      become: true
+      lineinfile:
+        path: /etc/hosts_TEST
+        line: '# File not overwritten'
+        state: present
+        insertbefore: BOF
+        create: true
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Ensure wget is installed
+      package:
+        name: wget
+        state: present

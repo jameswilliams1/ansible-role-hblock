@@ -1,0 +1,6 @@
+---
+hblock_download_url: "https://raw.githubusercontent.com/hectorm/hblock/\
+v{{ hblock_version }}/hblock"
+hblock_hosts_file_message: |-  # set Github issue link for header and footer
+  # Created with ansible-role-hblock. Please report any issues to:
+  # https://github.com/jameswilliams1/ansible-role-hblock/issues
