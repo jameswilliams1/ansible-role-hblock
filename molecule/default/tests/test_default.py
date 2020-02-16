@@ -18,5 +18,5 @@ def test_hblock_script_installed(host):
 
 def test_role_does_not_destroy_existing_hosts_file(host):
     message = "# File not overwritten"  # added as a test before running role
-    hosts_file = host.file("/etc/hosts")
+    hosts_file = host.file("/etc/hosts_TEST")
     assert hosts_file.content_string.split("\n")[0] == message  # first line
