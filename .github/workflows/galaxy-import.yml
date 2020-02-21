@@ -1,0 +1,16 @@
+---
+name: Import role to Ansible Galaxy
+on: release  # yamllint disable-line rule:truthy
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Import role to Ansible Galaxy
+        run: >-
+          docker run --rm geerlingguy/docker-ubuntu1804-ansible:latest
+          ansible-galaxy role import
+          --api-key ${GALAXY_API_KEY}
+          ${GITHUB_ACTOR}
+          $(echo ${GITHUB_REPOSITORY} | cut -d/ -f2)
