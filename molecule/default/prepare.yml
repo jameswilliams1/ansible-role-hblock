@@ -14,6 +14,11 @@
         group: root
         mode: '0644'
 
+    - name: Ensure APT is up to date (Debian only)
+      apt:
+        update_cache: true
+      when: ansible_os_family == 'Debian'
+
     - name: Ensure wget is installed
       package:
         name: wget
