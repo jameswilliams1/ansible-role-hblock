@@ -29,8 +29,8 @@ jobs:
           python-version: ${{ matrix.PYTHON_VERSION }}
       - name: Install Molecule dependencies
         run: |
-          python -m pip install --no-cache-dir --upgrade pip
-          python -m pip install --no-cache-dir molecule[docker]
+          python -m pip install --no-cache-dir --upgrade pip pipenv
+          pipenv install --ignore-pipfile --deploy --system
       - name: Test with molecule
         run: molecule test
         env:
