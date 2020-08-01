@@ -13,8 +13,10 @@ Requirements
 
 Role Variables
 --------------
+
 Some configuration is left as an option to the user, but generally only the version should be changed.  
 **NB:** setting `hblock_root_only: false` will allow anyone to modify the hosts file using hBlock. It is not recommended.
+
 ```yaml
 hblock_version:  Version of hBlock script to download
 hblock_download_checksum:  Hash of hBlock script prefixed with hash type (see example)
@@ -34,11 +36,10 @@ Example Playbook
 ```yaml
 - hosts: all
   roles:
-     - hblock
+     - jameswilliams1.hblock
   vars:
-    hblock_version: '2.1.4'
-    hblock_download_checksum: 'sha256:a379434ebd58b0b976244d568a299318aa24e7be8d67\
-    95b5f8224bad3f4b44b8'
+    hblock_version: '2.1.6'
+    hblock_download_checksum: 'sha256:9e22c32c8ae4d93df18a41f08d31e8668ef4342fda82ca91ec4aa47f718fdadc'
     hblock_install_dir: /usr/local/bin  # Generally no reason to change this
     hblock_root_only: false  # WARNING If false, allows non root users to modify hosts file using hBlock
     hblock_output_file: /some/other/path
