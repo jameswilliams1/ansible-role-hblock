@@ -8,9 +8,11 @@ jobs:
 
     steps:
       - name: Import role to Ansible Galaxy
+        env:
+            GALAXY_API_KEY: ${{ secrets.GALAXY_API_KEY }}
         run: >-
           docker run --rm geerlingguy/docker-ubuntu1804-ansible:latest
           ansible-galaxy role import
-          --api-key ${GALAXY_API_KEY}
-          ${GITHUB_ACTOR}
-          $(echo ${GITHUB_REPOSITORY} | cut -d/ -f2)
+          --api-key "$GALAXY_API_KEY"
+          "$(echo "$GITHUB_REPOSITORY" | cut -d/ -f1)"
+          "$(echo "$GITHUB_REPOSITORY" | cut -d/ -f2)"
