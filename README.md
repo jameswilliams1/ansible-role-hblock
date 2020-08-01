@@ -1,6 +1,8 @@
 hblock
 =========
 
+![Tests](https://github.com/jameswilliams1/ansible-role-hblock/workflows/Tests/badge.svg)
+
 This role installs and then runs hBlock on Linux. It will backup then append to `/etc/hosts` in order to block adverts and trackers system-wide. Unlike the original hBlock script, your existing changes to the hosts file will be preserved.
 
 **Note:** this is a work in progress and currently only supports a few settings for hBlock. In the future options will be added to provide a more customised setup, as well as systemd timer support for updating block lists. Although every effort has been taken to prevent bugs, this role **will** modify your systems hosts file. Usage is entirely at your own risk.
