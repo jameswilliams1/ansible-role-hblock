@@ -1,6 +1,6 @@
 ---
-name: Import role to Ansible Galaxy
-on: release  # yamllint disable-line rule:truthy
+name: Galaxy Import
+on: release
 
 jobs:
   build:
